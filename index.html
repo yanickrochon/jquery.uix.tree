@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+  <link rel="stylesheet" href="css/jquery.uix.tree.css" />
+  <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script src="js/jquery.uix.tree.js"></script>
+  <style type="text/css">
+  body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+  }
+
+  #tree { width: 200px; }
+  </style>
+  <script type="text/javascript">
+  $(function() {
+    $( "#tree" ).tree();
+  });
+  </script>
+</head>
+<body>
+
+<ul id="tree">
+    <li><a href="#">/</a>
+	    <ul>
+		    <li><a href="#">bin</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#">boot</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#">etc</a>
+			    <ul>
+				    <li><a href="#">environment</a></li>
+				    <li><a href="#">fstab</a></li>
+				    <li><a href="#">init</a>
+					    <ul>
+						    <li><a href="#">cups.conf</a></li>
+						    <li><a href="#">dbus.conf</a></li>
+						    <li><a href="#">Bergen</a></li>
+						    <li><a href="#">hostname.conf</a></li>
+					    </ul>
+				    </li>
+				    <li><a href="#">resolvconf</a>
+					    <ul>
+						    <li><a href="#">interface-order</a></li>
+						    <li><a href="#">resolv.conf.d</a>
+                                <ul>
+                                    <li><a href="#">base</a></li>
+                                    <li><a href="#">head</a></li>
+                                </ul>
+                            </li>
+					    </ul>
+				    </li>
+			    </ul>
+		    </li>
+		    <li><a href="#">home</a>
+			    <ul>
+				    <li><a href="#">Foobar</a>
+					    <ul>
+						    <li><a href="#">Documents</a>
+                                <ul>
+                                    <li><a href="#">file1.txt</a></li>
+                                    <li><a href="#">file2.txt</a></li>
+                                </ul>
+                            </li>
+						    <li><a href="#">Music</a>
+                                <ul></ul>
+                            </li>
+						    <li><a href="#">Videos</a>
+                                <ul></ul>
+                            </li>
+					    </ul>
+                    </li>
+			    </ul>
+		    </li>
+		    <li><a href="#">opt</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#">var</a>
+			    <ul>
+				    <li><a href="#">lib</a>
+                        <ul></ul>
+                    </li>
+				    <li><a href="#">local</a>
+                        <ul></ul>
+                    </li>
+				    <li><a href="#">log</a>
+                        <ul></ul>
+                    </li>
+				    <li><a href="#">www</a>
+                        <ul></ul>
+                    </li>
+			    </ul>
+		    </li>
+	    </ul>
+    </li>
+</ul>
+
+</body>
+</html>
