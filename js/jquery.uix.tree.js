@@ -43,6 +43,7 @@ $.widget("uix.tree", {
         if (nodes.length) {
             var anchors = base.addClass("uix-tree-node").children("a").addClass("ui-corner-all");
             var events = {
+                'click': $.proxy(this._selectNode, this),
                 'dblclick': $.proxy(this._toggleNode, this)
             };
 
@@ -63,7 +64,7 @@ $.widget("uix.tree", {
     _toggleNode: function(evt) {
         //console.log("toggle");
         //console.log(evt);
-        $(evt.target).children("ul").slideToggle();
+        $(evt.target).closest("li").children("ul").slideToggle();
     },
 
     _destroy: function() {
