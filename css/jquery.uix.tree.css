@@ -1,5 +1,4 @@
 
-
 .uix-tree,
 .uix-tree .uix-tree-node,
 .uix-tree .uix-tree-leaf {
@@ -21,15 +20,24 @@
     padding: 0;
 }
 
+.uix-tree,
 .uix-tree .uix-tree-node ul {
-    padding-left: 24px;
+    padding-left: 20px;
     margin: 0;
 }
 
 .uix-tree li {
+    position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
+}
+
+.uix-tree li span.ui-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: -18px;
 }
 
 .uix-tree li a {
