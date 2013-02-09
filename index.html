@@ -19,11 +19,22 @@
   </style>
   <script type="text/javascript">
   $(function() {
-    $( "#tree" ).tree();
+    $("#tree").tree();
+    $("#tree_icons").tree({
+        toggle: function(evt, ui) {
+            var expanded = (ui.nodes.attr("aria-expanded") == "true");
+            ui.nodes.children("a").children("span.ui-icon")
+                .removeClass("ui-icon-folder-" + (expanded ? "collapsed" : "open"))
+                .addClass("ui-icon-folder-" + (expanded ? "open" : "collapsed"));
+        }
+    });
   });
   </script>
 </head>
 <body>
+
+<div class="section">
+<h3>Simple Tree Usage</h3>
 
 <ul id="tree">
     <li><a href="#">/</a>
@@ -93,7 +104,84 @@
 				    <li><a href="#">log</a>
                         <ul></ul>
                     </li>
-				    <li><a href="#">www</a>
+			    </ul>
+		    </li>
+	    </ul>
+    </li>
+</ul>
+</div>
+
+
+
+<div class="section">
+<h3>Tree With Icons</h3>
+
+<ul id="tree_icons">
+    <li><a href="#">/</a>
+	    <ul>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>bin</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>boot</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>etc</a>
+			    <ul>
+				    <li><a href="#"><span class="ui-icon ui-icon-document"></span>environment</a></li>
+				    <li><a href="#"><span class="ui-icon ui-icon-document"></span>fstab</a></li>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>init</a>
+					    <ul>
+						    <li><a href="#"><span class="ui-icon ui-icon-document"></span>cups.conf</a></li>
+						    <li><a href="#"><span class="ui-icon ui-icon-document"></span>dbus.conf</a></li>
+						    <li><a href="#"><span class="ui-icon ui-icon-document"></span>Bergen</a></li>
+						    <li><a href="#"><span class="ui-icon ui-icon-document"></span>hostname.conf</a></li>
+					    </ul>
+				    </li>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>resolvconf</a>
+					    <ul>
+						    <li><a href="#"><span class="ui-icon ui-icon-document"></span>interface-order</a></li>
+						    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>resolv.conf.d</a>
+                                <ul>
+                                    <li><a href="#"><span class="ui-icon ui-icon-document"></span>base</a></li>
+                                    <li><a href="#"><span class="ui-icon ui-icon-document"></span>head</a></li>
+                                </ul>
+                            </li>
+					    </ul>
+				    </li>
+			    </ul>
+		    </li>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>home</a>
+			    <ul>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>Foobar</a>
+					    <ul>
+						    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>Documents</a>
+                                <ul>
+                                    <li><a href="#"><span class="ui-icon ui-icon-document"></span>file1.txt</a></li>
+                                    <li><a href="#"><span class="ui-icon ui-icon-document"></span>file2.txt</a></li>
+                                </ul>
+                            </li>
+						    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>Music</a>
+                                <ul></ul>
+                            </li>
+						    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>Videos</a>
+                                <ul></ul>
+                            </li>
+					    </ul>
+                    </li>
+			    </ul>
+		    </li>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>opt</a>
+			    <ul></ul>
+		    </li>
+		    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>var</a>
+			    <ul>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>lib</a>
+                        <ul></ul>
+                    </li>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>local</a>
+                        <ul></ul>
+                    </li>
+				    <li><a href="#"><span class="ui-icon ui-icon-folder-collapsed"></span>log</a>
                         <ul></ul>
                     </li>
 			    </ul>
@@ -101,6 +189,9 @@
 	    </ul>
     </li>
 </ul>
+</div>
+
+
 
 </body>
 </html>

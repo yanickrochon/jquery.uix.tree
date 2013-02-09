@@ -33,11 +33,17 @@
     width: 100%;
 }
 
-.uix-tree li span.ui-icon {
+.uix-tree li span.uix-tree-node-handle {
     cursor: pointer;
     position: absolute;
     top: 1px;
     left: -18px;
+}
+.uix-tree li a span.ui-icon {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+
 }
 
 .uix-tree li a {
