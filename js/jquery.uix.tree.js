@@ -164,7 +164,7 @@ $.widget("uix.tree", {
             container.children("span.uix-tree-node-handle").toggleClass(this.options.icons.collapsed + " " + this.options.icons.expanded);
             
             if (groupContainer.find(".ui-state-focus").length) {
-                this._delay(function() { this._selectNode(node); });  // if some children have focus, just grab it!
+                this._delay(function() { this._selectNode(node); });  // if some children have focus, just grab it!
             }
 
             /*if (groupContainer.children("li").length)*/ this[expanded ? "_hide" : "_show"]( groupContainer, this.options[expanded ? "hide" : "show"] );
