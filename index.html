@@ -2,34 +2,38 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>jQuery UI Tabs - Default functionality</title>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
-  <link rel="stylesheet" href="css/jquery.uix.tree.css" />
-  <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-  <script src="js/jquery.uix.tree.js"></script>
-  <style type="text/css">
-  body {
-	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
-	font-size: 62.5%;
-  }
-
-  #tree { width: 200px; }
-  </style>
-  <script type="text/javascript">
-  $(function() {
-    $("#tree").tree();
-    $("#tree_icons").tree({
-        toggle: function(evt, ui) {
-            var expanded = (ui.nodes.attr("aria-expanded") == "true");
-            ui.nodes.children("a").children("span.ui-icon")
-                .removeClass("ui-icon-folder-" + (expanded ? "collapsed" : "open"))
-                .addClass("ui-icon-folder-" + (expanded ? "open" : "collapsed"));
+    <meta charset="utf-8" />
+    <title>jQuery UI Tabs - Default functionality</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="css/jquery.uix.tree.css" />
+    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script src="js/jquery.uix.tree.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+            font-size: 62.5%;
         }
-    });
-  });
-  </script>
+
+        #tree { width: 200px; }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $("#tree").tree();
+            var treeIconClone = $("#tree_icons").clone().prop("id", "tree_icons2").insertAfter("#tree_icons").tree({
+                fullRowSelect: true
+            });
+
+            $("#tree_icons").tree({
+                nodeToggle: function(evt, ui) {
+                    var expanded = (ui.nodes.closest("li").attr("aria-expanded") === "true");
+                    ui.nodes.children("span.ui-icon")
+                        .removeClass("ui-icon-folder-" + (expanded ? "collapsed" : "open"))
+                        .addClass("ui-icon-folder-" + (expanded ? "open" : "collapsed"));
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
